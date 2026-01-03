@@ -47,8 +47,8 @@ impl PacketBuilder {
         let sent_with_keys = conn.spaces[space_id].sent_with_keys;
         if space_id == SpaceId::Data {
             if sent_with_keys >= conn.key_phase_size {
-                debug!("routine key update due to phase exhaustion");
-                conn.force_key_update();
+                debug!("DBGDISABLED routine key update due to phase exhaustion");
+                //conn.force_key_update();
             }
         } else {
             let confidentiality_limit = conn.spaces[space_id]
